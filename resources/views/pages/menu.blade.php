@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
-@section('title', 'Home')
+@section('title', 'menu')
 
 @section('content')
     <h1>Welcome</h1>
-    <p>Ini halaman home</p>
+    <p>Ini halaman menu</p>
 @endsection
