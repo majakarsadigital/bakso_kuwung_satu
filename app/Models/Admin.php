@@ -10,12 +10,12 @@ class Admin extends Authenticatable
 {
     use HasFactory, Notifiable;
 
-    protected $table = 'admin';
+    protected $table = 'admins';
 
     protected $fillable = [
         'username',
         'password',
-        'nama_lengkap',
+        'full_name',
         'email',
         'role',
         'last_login',

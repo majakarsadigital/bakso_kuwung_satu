@@ -5,25 +5,25 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Testimoni extends Model
+class Testimonial extends Model
 {
     use HasFactory;
 
-    protected $table = 'testimoni';
+    protected $table = 'testimonials';
 
     protected $fillable = [
-        'nama_customer',
+        'customer_name',
         'rating',
-        'ulasan',
-        'foto_customer',
+        'review',
+        'customer_photo',
         'is_featured',
-        'tanggal_testimoni',
+        'testimonial_date',
     ];
 
     protected $casts = [
         'rating' => 'integer',
         'is_featured' => 'boolean',
-        'tanggal_testimoni' => 'datetime',
+        'testimonial_date' => 'datetime',
         'created_at' => 'datetime',
         'updated_at' => 'datetime',
     ];
@@ -36,5 +36,10 @@ class Testimoni extends Model
     public function scopeRating($query, $rating)
     {
         return $query->where('rating', $rating);
+    }
+
+    public function scopeLatest($query)
+    {
+        return $query->orderBy('testimonial_date', 'desc');
     }
 }

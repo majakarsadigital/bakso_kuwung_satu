@@ -5,40 +5,40 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class PaketHemat extends Model
+class Package extends Model
 {
     use HasFactory;
 
-    protected $table = 'paket_hemat';
+    protected $table = 'packages';
 
     protected $fillable = [
-        'nama_paket',
-        'deskripsi_paket',
-        'harga_paket',
-        'foto_paket',
+        'name',
+        'description',
+        'price',
+        'photo',
         'is_active',
     ];
 
     protected $casts = [
-        'harga_paket' => 'decimal:2',
+        'price' => 'decimal:2',
         'is_active' => 'boolean',
         'created_at' => 'datetime',
         'updated_at' => 'datetime',
     ];
 
-    public function paketMenus()
+    public function packageMenus()
     {
-        return $this->hasMany(PaketMenu::class, 'paket_id');
+        return $this->hasMany(PackageMenu::class);
     }
 
     public function menus()
     {
-        return $this->belongsToMany(Menu::class, 'paket_menu', 'paket_id', 'menu_id')
-            ->withPivot('jumlah')
+        return $this->belongsToMany(Menu::class, 'package_menus', 'package_id', 'menu_id')
+            ->withPivot('quantity')
             ->withTimestamps();
     }
 
-    public function scopeAktif($query)
+    public function scopeActive($query)
     {
         return $query->where('is_active', true);
     }

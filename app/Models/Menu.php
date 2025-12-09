@@ -9,33 +9,43 @@ class Menu extends Model
 {
     use HasFactory;
 
-    protected $table = 'menu';
+    protected $table = 'menus';
 
     protected $fillable = [
-        'nama_menu',
-        'harga',
-        'deskripsi_singkat',
-        'foto_menu',
-        'kategori',
+        'name',
+        'price',
+        'short_description',
+        'photo',
+        'category',
         'is_available',
     ];
 
     protected $casts = [
-        'harga' => 'decimal:2',
+        'price' => 'decimal:2',
         'is_available' => 'boolean',
         'created_at' => 'datetime',
         'updated_at' => 'datetime',
     ];
 
-    public function paketMenus()
+    public function packageMenus()
     {
-        return $this->hasMany(PaketMenu::class);
+        return $this->hasMany(PackageMenu::class);
     }
 
-    public function paketHemats()
+    public function packages()
     {
-        return $this->belongsToMany(PaketHemat::class, 'paket_menu', 'menu_id', 'paket_id')
-            ->withPivot('jumlah')
+        return $this->belongsToMany(Package::class, 'package_menus', 'menu_id', 'package_id')
+            ->withPivot('quantity')
             ->withTimestamps();
+    }
+
+    public function scopeAvailable($query)
+    {
+        return $query->where('is_available', true);
+    }
+
+    public function scopeCategory($query, $category)
+    {
+        return $query->where('category', $category);
     }
 }

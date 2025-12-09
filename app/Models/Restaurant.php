@@ -5,22 +5,22 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Warung extends Model
+class Restaurant extends Model
 {
     use HasFactory;
 
-    protected $table = 'warung';
+    protected $table = 'restaurants';
 
     protected $fillable = [
-        'nama_warung',
+        'name',
         'tagline',
-        'cerita_singkat',
-        'keunggulan',
-        'alamat',
-        'telepon',
+        'short_story',
+        'advantages',
+        'address',
+        'phone',
         'whatsapp',
         'maps_embed',
-        'foto_suasana',
+        'photo',
     ];
 
     protected $casts = [

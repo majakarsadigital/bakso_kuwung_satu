@@ -5,30 +5,28 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class PaketMenu extends Model
+class PackageMenu extends Model
 {
     use HasFactory;
 
-    protected $table = 'paket_menu';
-
-    public $timestamps = false;
+    protected $table = 'package_menus';
 
     protected $fillable = [
-        'paket_id',
+        'package_id',
         'menu_id',
-        'jumlah',
+        'quantity',
     ];
 
     protected $casts = [
-        'paket_id' => 'integer',
+        'package_id' => 'integer',
         'menu_id' => 'integer',
-        'jumlah' => 'integer',
+        'quantity' => 'integer',
         'created_at' => 'datetime',
     ];
 
-    public function paketHemat()
+    public function package()
     {
-        return $this->belongsTo(PaketHemat::class, 'paket_id');
+        return $this->belongsTo(Package::class);
     }
 
     public function menu()
