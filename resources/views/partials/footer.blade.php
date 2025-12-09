@@ -1,6 +1,4 @@
-
-
-<footer class="bg-black">
+{{-- <footer class="bg-black">
     <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div class="md:flex md:justify-between">
           <div class="mb-6 md:mb-0">
@@ -72,5 +70,14 @@
             </a>
           </div>
       </div>
+    </div>
+</footer>
+ --}}
+ <footer class="w-full bg-black/70 backdrop-blur-sm py-6">
+    <div class="max-w-screen-xl mx-auto px-4">
+        {{-- NANTI DIGANTI LOGO --}}
+        <h2 class="text-center text-white text-lg md:text-sm font-semibold tracking-wider">
+            Bakso Kuwung Satu - MAJAKARSADIGITAL
+        </h2>
     </div>
 </footer>

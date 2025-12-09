@@ -1,4 +1,4 @@
-<nav class="bg-[#0A0A0A] fixed w-full z-20 top-0 start-0 border-vibrant-primary">
+<nav id="navbar" class="bg-[#0A0A0A] fixed w-full z-20 start-0 border-vibrant-primary transition-all duration-300 {{ request()->routeIs('index') ? 'bottom-0' : 'top-0' }}">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
             <img src="https://flowbite.com/docs/images/logo.svg" class="h-7" alt="Flowbite Logo" />
@@ -22,25 +22,25 @@
             <ul
                 class="font-medium flex flex-col p-4 md:p-0 mt-4 rounded-sm bg-[#0A0A0A] md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 ">
                 <li>
-                    <a href="#"
-                        class="block py-2 px-3 text-white bg-brand rounded md:bg-transparent md:text-fg-brand md:p-0"
+                    <a href="{{route('index')}}"
+                        class="block py-2 px-3 rounded md:p-0  {{ request()->routeIs('index') ? 'text-white bg-brand md:bg-transparent md:text-fg-brand' : 'text-vibrant-primary hover:bg-neutral-tertiary md:hover:bg-transparent md:hover:text-fg-brand' }}" aria-current="{{ request()->routeIs('index') ? 'page' : '' }}"
                         aria-current="page">Home</a>
                 </li>
                 <li>
-                    <a href="#"
-                        class="block py-2 px-3 text-vibrant-primary rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent">Menu</a>
+                    <a href="{{route('menu.index')}}"
+                        class="block py-2 px-3 rounded md:p-0  {{ request()->routeIs('menu.index') ? 'text-white bg-brand md:bg-transparent md:text-fg-brand' : 'text-vibrant-primary hover:bg-neutral-tertiary md:hover:bg-transparent md:hover:text-fg-brand' }}" aria-current="{{ request()->routeIs('menu.index') ? 'page' : '' }}">Menu</a>
                 </li>
                 <li>
                     <a href="#"
-                        class="block py-2 px-3 text-vibrant-primary rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent">About</a>
+                        class="block py-2 px-3 rounded md:p-0  {{ request()->routeIs('') ? 'text-white bg-brand md:bg-transparent md:text-fg-brand' : 'text-vibrant-primary hover:bg-neutral-tertiary md:hover:bg-transparent md:hover:text-fg-brand' }}" aria-current="{{ request()->routeIs('') ? 'page' : '' }}">About</a>
                 </li>
                 <li>
                     <a href="#"
-                        class="block py-2 px-3 text-vibrant-primary rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent">Contact</a>
+                        class="block py-2 px-3 rounded md:p-0  {{ request()->routeIs('') ? 'text-white bg-brand md:bg-transparent md:text-fg-brand' : 'text-vibrant-primary hover:bg-neutral-tertiary md:hover:bg-transparent md:hover:text-fg-brand' }}" aria-current="{{ request()->routeIs('') ? 'page' : '' }}">Contact</a>
                 </li>
                   <li>
                     <a href="#"
-                        class="block py-2 px-3 text-vibrant-primary rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent">Address</a>
+                        class="block py-2 px-3 rounded md:p-0  {{ request()->routeIs('') ? 'text-white bg-brand md:bg-transparent md:text-fg-brand' : 'text-vibrant-primary hover:bg-neutral-tertiary md:hover:bg-transparent md:hover:text-fg-brand' }}" aria-current="{{ request()->routeIs('') ? 'page' : '' }}">Address</a>
                 </li>
             </ul>
         </div>
