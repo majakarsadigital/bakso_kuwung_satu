@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="w-full h-full overflow-hidden">
-        <div class="w-full h-[90vh] overflow-hidden">
+        <div class="w-full h-full overflow-hidden">
             <img src="https://images.getbento.com/accounts/ded52d79832218f313843dbd37f0252e/media/enEsIMAUQcC31KWaWzgh_Homepage%201.jpg?w=1200&fit=max&auto=compress,format&cs=origin"
                 class="w-full h-full object-cover"
                 alt="">
