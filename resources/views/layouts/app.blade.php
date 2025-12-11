@@ -6,6 +6,9 @@
     <title>@yield('title', 'Bakso Kuwung Satu')</title>
 
     @vite('resources/css/app.css')
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">
 </head>
 
 <body class="min-h-screen flex flex-col bg-[#0A0A0A]">

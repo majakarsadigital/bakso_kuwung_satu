@@ -17,3 +17,9 @@
     --color-bg-dark: #0A0A0A;
 
 }
+
+.potta-one-regular {
+  font-family: "Potta One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
