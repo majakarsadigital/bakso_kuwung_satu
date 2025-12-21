@@ -12,6 +12,7 @@ class Testimonial extends Model
     protected $table = 'testimonials';
 
     protected $fillable = [
+        'menu_id',
         'customer_name',
         'rating',
         'review',
@@ -27,6 +28,11 @@ class Testimonial extends Model
         'created_at' => 'datetime',
         'updated_at' => 'datetime',
     ];
+
+    public function menu()
+    {
+        return $this->belongsTo(Menu::class);
+    }
 
     public function scopeFeatured($query)
     {
