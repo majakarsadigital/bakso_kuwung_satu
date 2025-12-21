@@ -1,6 +1,6 @@
 <nav id="navbar"
     class="
-    fixed start-0 w-full z-20
+    fixed start-0 w-full z-50
     bg-black/20
     backdrop-blur-2xl backdrop-saturate-200
     border border-white/10
@@ -42,9 +42,9 @@
             <div class="relative">
                 <div class="absolute inset-0 bg-white/20 rounded-lg blur-md group-hover:bg-white/30 transition-all">
                 </div>
-                <img src="https://flowbite.com/docs/images/logo.svg" class="h-7 relative z-10" alt="Flowbite Logo" />
+                <img src="{{ asset('picture/logo2.png') }}" class="h-6 md:h-8 relative z-10" alt="Flowbite Logo" />
             </div>
-            <span class="self-center text-xl text-white font-semibold whitespace-nowrap drop-shadow-lg">Flowbite</span>
+            {{-- <span class="self-center text-xl text-white font-semibold whitespace-nowrap drop-shadow-lg">Flowbite</span> --}}
         </a>
         <button data-collapse-toggle="navbar-dropdown" type="button"
             class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white/90 rounded-lg md:hidden 
@@ -109,7 +109,6 @@
         animation: shimmer 3s infinite;
     }
 
-    /* Efek tambahan untuk glass effect */
     #navbar::before {
         content: '';
         position: absolute;
