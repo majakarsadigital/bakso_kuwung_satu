@@ -79,32 +79,63 @@
     </div>
 
 @if(request()->routeIs('index'))
-    <script>
-        const navbar = document.getElementById('navbar');
+<script>
+    const navbar = document.getElementById('navbar');
+    const text = document.getElementById('floatingText');
+    const floatingText = document.getElementById('floatingText');
+    const containerBox = document.getElementById('containerBox');
+    const navbarHeight = 50;
 
-        function handleNavbar() {
-            // MOBILE
-            const isMobile = window.innerWidth < 768;
+    function handleNavbar() {
+        const isMobile = window.innerWidth < 768;
 
-            // MOBILE -> SELALU TOP
-            if (isMobile) {
-                navbar.classList.remove('bottom-0');
-                navbar.classList.add('top-0');
-                return;
-            }
+        if (isMobile) {
+            // Navbar selalu top
+            navbar.classList.remove('bottom-0');
+            navbar.classList.add('top-0');
 
-            // DESKTOP HOME -> BOTTOM → TOP ON SCROLL
-            if (window.scrollY > 50) {
-                navbar.classList.remove('bottom-0');
-                navbar.classList.add('top-0','shadow-lg');
-            } else {
-                navbar.classList.remove('top-0','shadow-lg');
-                navbar.classList.add('bottom-0');
-            }
+            // Teks selalu berada absolute di hero
+            text.style.position = "absolute";
+            text.style.bottom = "80px";
+            text.style.top = ""; 
+
+            return;
         }
 
-        window.addEventListener('scroll', handleNavbar);
-        window.addEventListener('resize', handleNavbar);
+        if (window.scrollY > 50) {
+            navbar.classList.remove('bottom-0');
+            navbar.classList.add('top-0', 'shadow-lg');
+
+            text.style.position = "fixed";
+            text.style.top = navbarHeight + "px";
+            text.style.bottom = "";
+
+            containerBox.classList.remove('opacity-0');
+            containerBox.classList.add('opacity-100');
+
+            floatingText.classList.remove('opacity-100');
+            floatingText.classList.add('opacity-0');
+        } else {
+            navbar.classList.remove('top-0', 'shadow-lg');
+            navbar.classList.add('bottom-0');
+
+            text.style.position = "absolute";
+            text.style.bottom = "80px";
+            text.style.top = ""; 
+
+            floatingText.classList.remove('opacity-0');
+            floatingText.classList.add('opacity-100');
+
+            containerBox.classList.remove('opacity-100');
+            containerBox.classList.add('opacity-0');
+        }
+    }
+
+    window.addEventListener('scroll', handleNavbar);
+    window.addEventListener('resize', handleNavbar);
+
+    handleNavbar();
+</script>
 
         handleNavbar();
     </script>
