@@ -4,16 +4,16 @@
 
 @section('content')
     <div class="w-full h-full overflow-hidden">
+ <div class="absolute inset-0 
+                bg-linear-to-l 
+                from-black/50 
+                to-transparent 
+                z-10">
+    </div>
 
-        <div id="floatingText"
-            class="absolute bottom-20 right-20 left-auto text-left text-white transition-all duration-300 w-fit">
+        <div class="absolute bottom-36 right-20 text-left text-white z-20 w-fit">
             <div class="flex items-start gap-4">
-
-                <img src="{{ asset('picture/logo-company.svg') }}" 
-                    alt="Logo"
-                    class="w-60 h-50 mt-15 object-contain">
-
-                <p class="potta-one-regular text-4xl font-bold leading-tight">
+                <p class="font-potta text-7xl font-semibold leading-tight text-right drop-shadow-lg">
                     Lezatnya<br>
                     nyata<br>
                     bukan<br>
@@ -24,57 +24,46 @@
         </div>
 
         <div class="w-full h-full overflow-hidden">
-            <img src="https://images.getbento.com/accounts/ded52d79832218f313843dbd37f0252e/media/enEsIMAUQcC31KWaWzgh_Homepage%201.jpg?w=1200&fit=max&auto=compress,format&cs=origin"
-                class="w-full h-full object-cover"
-                alt="">
+            <img src="{{ asset('picture/bks.jpg') }}"
+                class="w-screen h-screen object-cover " alt="">
         </div>
-        
+
         <div class="max-w-screen-2xl mx-auto px-4 pt-15 pb-32">
             <div class="grid grid-cols-2 md:grid-cols-4 auto-rows-[160px] md:auto-rows-[220px] gap-4">
 
                 <div class="col-span-2 row-span-2 overflow-hidden rounded-xl">
                     <img src="https://images.getbento.com/accounts/ded52d79832218f313843dbd37f0252e/media/enEsIMAUQcC31KWaWzgh_Homepage%201.jpg?w=1200&fit=max&auto=compress,format&cs=origin"
-                        class="w-full h-full object-cover hover:scale-105 transition duration-300"
-                        alt="">
+                        class="w-full h-full object-cover hover:scale-105 transition duration-300" alt="">
                 </div>
 
                 <div class="overflow-hidden rounded-xl">
                     <img src="https://images.getbento.com/accounts/ded52d79832218f313843dbd37f0252e/media/enEsIMAUQcC31KWaWzgh_Homepage%201.jpg?w=1200&fit=max&auto=compress,format&cs=origin"
-                        class="w-full h-full object-cover hover:scale-105 transition duration-300"
-                        alt="">
+                        class="w-full h-full object-cover hover:scale-105 transition duration-300" alt="">
                 </div>
 
                 <div class="overflow-hidden rounded-xl">
                     <img src="https://images.getbento.com/accounts/ded52d79832218f313843dbd37f0252e/media/enEsIMAUQcC31KWaWzgh_Homepage%201.jpg?w=1200&fit=max&auto=compress,format&cs=origin"
-                        class="w-full h-full object-cover hover:scale-105 transition duration-300"
-                        alt="">
+                        class="w-full h-full object-cover hover:scale-105 transition duration-300" alt="">
                 </div>
 
                 <div class="col-span-2 overflow-hidden rounded-xl">
                     <img src="https://images.getbento.com/accounts/ded52d79832218f313843dbd37f0252e/media/enEsIMAUQcC31KWaWzgh_Homepage%201.jpg?w=1200&fit=max&auto=compress,format&cs=origin"
-                        class="w-full h-full object-cover hover:scale-105 transition duration-300"
-                        alt="">
+                        class="w-full h-full object-cover hover:scale-105 transition duration-300" alt="">
                 </div>
 
                 <div class="overflow-hidden rounded-xl">
                     <img src="https://images.getbento.com/accounts/ded52d79832218f313843dbd37f0252e/media/enEsIMAUQcC31KWaWzgh_Homepage%201.jpg?w=1200&fit=max&auto=compress,format&cs=origin"
-                        class="w-full h-full object-cover hover:scale-105 transition duration-300"
-                        alt="">
+                        class="w-full h-full object-cover hover:scale-105 transition duration-300" alt="">
                 </div>
 
                 <div class="overflow-hidden rounded-xl">
                     <img src="https://images.getbento.com/accounts/ded52d79832218f313843dbd37f0252e/media/enEsIMAUQcC31KWaWzgh_Homepage%201.jpg?w=1200&fit=max&auto=compress,format&cs=origin"
-                        class="w-full h-full object-cover hover:scale-105 transition duration-300"
-                        alt="">
+                        class="w-full h-full object-cover hover:scale-105 transition duration-300" alt="">
                 </div>
 
-                <div id="containerBox" class="col-span-2 md:col-span flex justify-end text-white transition-all duration-300 w-full animated-bg">
+                <div id="containerBox"
+                    class="col-span-2 md:col-span flex justify-end text-white transition-all duration-300 w-full animated-bg">
                     <div class="flex items-start gap-4 text-right relative z-10">
-                        
-                        <img src="{{ asset('picture/logo.svg') }}" 
-                            alt="Logo"
-                            class="w-60 h-50 mt-5 object-contain">
-
                         <p class="potta-one-regular text-4xl font-bold leading-tight">
                             Lezatnya<br>
                             nyata<br>
@@ -148,5 +137,7 @@
     handleNavbar();
 </script>
 
-@endif
+        handleNavbar();
+    </script>
+    @endif
 @endsection
