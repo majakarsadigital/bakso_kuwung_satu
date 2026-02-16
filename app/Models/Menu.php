@@ -48,4 +48,23 @@ class Menu extends Model
     {
         return $query->where('category', $category);
     }
+
+    public function testimonials()
+    {
+        return $this->hasMany(Testimonial::class);
+    }
+
+    protected $appends = ['average_rating', 'is_popular'];
+
+    public function getAverageRatingAttribute()
+    {
+        return round($this->testimonials_avg_rating ?? 0, 1);
+    }
+
+    public function getIsPopularAttribute()
+    {
+        return
+            ($this->testimonials_avg_rating ?? 0) >= 4.5 &&
+            ($this->testimonials_count ?? 0) >= 5;
+    }
 }

@@ -1,15 +1,10 @@
 <div
-    class="group relative rounded-xl  overflow-hidden bg-dark-primary border border-white/10 shadow-lg hover:shadow-xl transition-shadow min-h-[320px] md:min-h-[400px]">
+    class="group relative overflow-hidden bg-dark-primary ring-1 ring-vibrant-primary/30 rounded-sm shadow-lg hover:shadow-xl transition-shadow min-h-[320px] md:min-h-[400px]">
 
     <img src="{{ asset('storage/' . $package->photo) }}" alt="{{ $package->name }}"
         class="absolute inset-0 w-full h-full object-cover object-bottom z-0 group-hover:scale-105 transition-transform duration-700">
 
-    <div class="absolute inset-0 bg-black/30"></div>
-
-    <div class="absolute inset-0
-           bg-radial from-white/20 via-white/5 to-transparent
-           opacity-90">
-    </div>
+    {{-- <div class="absolute inset-0 bg-black/30"></div> --}}
 
 
 

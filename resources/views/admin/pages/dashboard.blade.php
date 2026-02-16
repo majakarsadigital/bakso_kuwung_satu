@@ -33,6 +33,5 @@
             </p>
         </div>
     </div>
-    <!-- Konten dashboard lainnya -->
 </div>
 @endsection

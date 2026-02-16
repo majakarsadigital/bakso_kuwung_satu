@@ -1,5 +1,6 @@
 <nav id="navbar"
     class="
+    {{ request()->routeIs('index') ? 'hidden lg:block' : 'block' }}
     fixed start-0 w-full z-50
     bg-black/20
     backdrop-blur-2xl backdrop-saturate-200
@@ -38,7 +39,7 @@
             inset 0 -1px 0 0 rgba(255, 255, 255, 0.1);
     ">
     <div class="max-w-full flex flex-wrap items-center justify-between mx-auto p-4 px-8 relative z-10">
-        <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse group">
+        <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse group">
             <div class="relative">
                 <div class="absolute inset-0 bg-white/20 rounded-lg blur-md group-hover:bg-white/30 transition-all">
                 </div>
@@ -66,7 +67,7 @@
                     <a href="{{ route('index') }}"
                         class="block py-2 px-4 rounded-lg md:p-0 transition-all duration-300
                         {{ request()->routeIs('index') ? 'text-white bg-white/30 md:bg-transparent md:text-white font-semibold shadow-lg' : 'text-white/80 hover:bg-white/20 md:hover:bg-transparent md:hover:text-white hover:scale-105' }}"
-                        aria-current="{{ request()->routeIs('index') ? 'page' : '' }}">Home</a>
+                        aria-current="{{ request()->routeIs('index') ? 'page' : '' }}">Beranda</a>
                 </li>
                 <li>
                     <a href="{{ route('menu.index') }}"
@@ -75,19 +76,16 @@
                         aria-current="{{ request()->routeIs('menu.index') ? 'page' : '' }}">Menu</a>
                 </li>
                 <li>
-                    <a href="#"
+                    <a href="{{ route('about') }}"
                         class="block py-2 px-4 rounded-lg md:p-0 transition-all duration-300
-                        text-white/80 hover:bg-white/20 md:hover:bg-transparent md:hover:text-white hover:scale-105">About</a>
+                        {{ request()->routeIs('about') ? 'text-white bg-white/30 md:bg-transparent md:text-white font-semibold shadow-lg' : 'text-white/80 hover:bg-white/20 md:hover:bg-transparent md:hover:text-white hover:scale-105' }}">Tentang
+                        Kami</a>
                 </li>
                 <li>
-                    <a href="#"
+                    <a href="{{ route('contact') }}"
                         class="block py-2 px-4 rounded-lg md:p-0 transition-all duration-300
-                        text-white/80 hover:bg-white/20 md:hover:bg-transparent md:hover:text-white hover:scale-105">Contact</a>
-                </li>
-                <li>
-                    <a href="#"
-                        class="block py-2 px-4 rounded-lg md:p-0 transition-all duration-300
-                        text-white/80 hover:bg-white/20 md:hover:bg-transparent md:hover:text-white hover:scale-105">Address</a>
+                        {{ request()->routeIs('contact') ? 'text-white bg-white/30 md:bg-transparent md:text-white font-semibold shadow-lg' : 'text-white/80 hover:bg-white/20 md:hover:bg-transparent md:hover:text-white hover:scale-105' }}">Kontak
+                        & Alamat</a>
                 </li>
             </ul>
         </div>

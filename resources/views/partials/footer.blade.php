@@ -75,27 +75,45 @@
  --}}
 
 
-<footer class="bg-black">
-    <div class="w-full mx-auto max-w-full px-8 p-4 md:flex md:items-center md:justify-between">
-        <span class="text-sm text-body sm:text-center">© 2023 <a href="https://flowbite.com/"
-                class="hover:underline">Flowbite™</a>. All Rights Reserved.
-        </span>
-        <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-body sm:mt-0">
-            <li>
-                <a href="#" class="hover:underline me-4 md:me-6">About</a>
-            </li>
-            <li>
-                <a href="#" class="hover:underline me-4 md:me-6">Privacy Policy</a>
-            </li>
-            <li>
-                <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
-            </li>
-            <li>
-                <a href="#" class="hover:underline">Contact</a>
-            </li>
-        </ul>
+<footer class="bg-black border-t border-neutral-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        <div class="flex flex-col-reverse md:flex-row md:items-center md:justify-between gap-6">
+
+            <div class="text-sm text-neutral-400 text-center md:text-left">
+                © {{ date('Y') }}
+                <span class="font-medium text-white">Bakso Kuwung</span>.
+                All Rights Reserved.
+            </div>
+
+            <ul class="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-3 text-sm text-neutral-400">
+                <li>
+                    <a href="{{ route('about') }}" class="hover:text-white transition-colors">
+                        Tentang Kami
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('privacy-policy') }}" class="hover:text-white transition-colors">
+                        Kebijakan Privasi
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('licensing') }}" class="hover:text-white transition-colors">
+                        Lisensi & Hak Cipta
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('contact') }}" class="hover:text-white transition-colors">
+                        Kontak
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+
     </div>
 </footer>
+
 
 {{-- <footer class="w-full bg-black/70 backdrop-blur-sm py-6">
     <div class="max-w-screen-xl mx-auto px-4">
