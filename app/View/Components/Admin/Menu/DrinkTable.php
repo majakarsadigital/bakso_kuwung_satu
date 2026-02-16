@@ -8,12 +8,15 @@ use Illuminate\View\Component;
 
 class DrinkTable extends Component
 {
+    public $drinkMenu;
+
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public function __construct($drinkMenu)
     {
-        //
+        $this->drinkMenu = $drinkMenu;
+
     }
 
     /**

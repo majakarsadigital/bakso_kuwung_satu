@@ -94,13 +94,13 @@
                 <div>
                     <h1 class="text-2xl font-bold text-white">Data Menu</h1>
                     <div class="flex items-center justify-between">
-                        <p class="text-neutral-400 mt-1">Daftar data menu </p>
+                        <p class="text-neutral-400 mt-1">Daftar data menu makanan </p>
                         <span class="text-sm text-neutral-400">{{ $foodMenus->count() }} menu</span>
                     </div>
                 </div>
             </div>
             <div
-                class="lg:max-h-[calc(100vh-210px)] xl:max-h-[calc(100vh-210px)] 2xl:max-h-[calc(100vh-210px)] overflow-y-auto bg-neutral-900 shadow-lg border border-neutral-800">
+                class="lg:max-h-[370px] xl:max-h-[370px] 2xl:max-h-[500px] overflow-y-auto bg-neutral-900 shadow-lg border border-neutral-800">
                 <table class="w-full bg-neutral-900 text-sm text-left text-neutral-300 min-w-[700px]">
                     <thead
                         class="sticky top-0 z-10 text-xs uppercase tracking-wider text-neutral-400  backdrop-blur-2xl border-b border-neutral-700">
@@ -122,7 +122,38 @@
                     </tbody>
                 </table>
             </div>
+            <div class="my-6">
+                <div>
+                    <h1 class="text-2xl font-bold text-white">Data Menu</h1>
+                    <div class="flex items-center justify-between">
+                        <p class="text-neutral-400 mt-1">Daftar data menu minuman </p>
+                        <span class="text-sm text-neutral-400">{{ $drinkMenus->count() }} menu</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="lg:max-h-[370px] mt-4 xl:max-h-[370px] 2xl:max-h-[500px] overflow-y-auto bg-neutral-900 shadow-lg border border-neutral-800">
+                <table class="w-full bg-neutral-900 text-sm text-left text-neutral-300 min-w-[700px]">
+                    <thead
+                        class="sticky top-0 z-10 text-xs uppercase tracking-wider text-neutral-400  backdrop-blur-2xl border-b border-neutral-700">
+                        <tr>
+                            <th class="px-6 py-4 font-semibold">Foto</th>
+                            <th class="px-6 py-4 font-semibold">Nama</th>
+                            <th class="px-6 py-4 font-semibold">Harga</th>
+                            <th class="px-6 py-4 font-semibold">Deskripsi</th>
+                            <th class="px-6 py-4 font-semibold">Status</th>
+                            <th class="px-6 py-4 font-semibold">Rating</th>
+                            <th class="px-6 py-4 font-semibold text-center">Aksi</th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="divide-y divide-neutral-800">
+                        @foreach ($drinkMenus as $drinkMenu)
+                            <x-admin.menu.drink-table :drink-menu="$drinkMenu" />
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-    {{-- Modal Edit Menu --}}
 @endsection

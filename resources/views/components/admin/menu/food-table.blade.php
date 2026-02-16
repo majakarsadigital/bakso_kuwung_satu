@@ -25,17 +25,26 @@
     </td>
 
     <td class="px-6 py-4">
-        @if ($foodMenu->is_popular)
+        @if ($foodMenu->is_available)
             <span
-                class="inline-flex items-center gap-1.5 bg-amber-500/20 text-amber-400 text-xs font-medium px-2.5 py-1 rounded-full border border-amber-500/30">
-                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-                    <path
-                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-900 text-emerald-200">
+                <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd" />
                 </svg>
-                Populer
+                Tersedia
             </span>
         @else
-            <span class="text-neutral-500 text-sm">-</span>
+            <span
+                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-900 text-red-200">
+                <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                        clip-rule="evenodd" />
+                </svg>
+                Tidak Tersedia
+            </span>
         @endif
     </td>
 
@@ -45,20 +54,20 @@
                 <path
                     d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
             </svg>
-            <span class="font-medium text-white">{{ $foodMenu->rating ?? '-' }}</span>
+            <span class="font-medium text-white">{{ $foodMenu->average_rating }}</span>
         </div>
     </td>
 
     <td class="px-6 py-4">
         <div class="flex items-center justify-center gap-2">
-            <button onclick="openRatingModal('{{ $foodMenu->id }}', '{{ $foodMenu->name }}')"
+            {{-- <button onclick="openRatingModal('{{ $foodMenu->id }}', '{{ $foodMenu->name }}')"
                 class="inline-flex items-center gap-1.5 bg-neutral-800 hover:bg-neutral-700 text-neutral-300 hover:text-white text-xs font-medium px-3 py-1.5 rounded-lg border border-neutral-700 hover:border-neutral-600 transition-all duration-200">
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
                 </svg>
                 Rating
-            </button>
+            </button> --}}
 
             <button data-modal-target="edit-modal-{{ $foodMenu->id }}" data-modal-toggle="edit-modal-{{ $foodMenu->id }}" type="button"
                 class="inline-flex items-center gap-1.5 bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-400 hover:text-emerald-300 text-xs font-medium px-3 py-1.5 rounded-lg border border-emerald-600/30 hover:border-emerald-500/50 transition-all duration-200">
@@ -89,7 +98,6 @@
         class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
         <div class="relative p-4 w-full max-w-2xl max-h-full">
             <div class="relative bg-neutral-900 border border-neutral-800 rounded-lg shadow-lg p-4 md:p-6">
-                {{-- Header --}}
                 <div class="flex items-center justify-between border-b border-neutral-800 pb-4 md:pb-5">
                     <h3 class="text-lg font-medium text-white">
                         Edit Menu

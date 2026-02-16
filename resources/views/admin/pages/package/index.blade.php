@@ -105,7 +105,6 @@
                     @enderror
                 </div>
 
-                {{-- Action --}}
                 <div class="flex items-center gap-3 pt-4 border-t border-neutral-800">
                     <button type="submit"
                         class="flex-1 px-6 py-2.5 bg-emerald-600 hover:bg-emerald-500
@@ -155,5 +154,4 @@
             </div>
         </div>
     </div>
-    {{-- Modal Edit Menu --}}
 @endsection
